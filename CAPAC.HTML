@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario</title>
+</head>
+<body>
+
+  <h2>Formulario de registro</h2>
+
+  <form id="formulario">
+    <input type="text" id="nombre" placeholder="Nombre" required>
+    <input type="text" id="edad" placeholder="Edad" required>
+    <input type="text" id="ciudad" placeholder="Ciudad" required>
+    <button type="submit">Agregar</button>
+  </form>
+
+  <table id="tabla" border="1">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>Ciudad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- las filas aparecerán aquí -->
+    </tbody>
+  </table>
+
+  <script>
+    const formulario = document.getElementById("formulario");
+    const tabla = document.getElementById("tabla").querySelector("tbody");
+
+    formulario.addEventListener("submit", function(event) {
+      event.preventDefault(); // evita recargar la página
+
+      const nombre = document.getElementById("nombre").value;
+      const edad = document.getElementById("edad").value;
+      const ciudad = document.getElementById("ciudad").value;
+
+      const fila = document.createElement("tr");
+      fila.innerHTML = `
+        <td>${nombre}</td>
+        <td>${edad}</td>
+        <td>${ciudad}</td>
+      `;
+
+      tabla.appendChild(fila);
+      formulario.reset();
+    });
+  </script>
+
+</body>
+</html>
