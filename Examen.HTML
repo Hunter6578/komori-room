@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Roblox Info</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            font-family: Arial, sans-serif;
+            height: 100%;
+        }
+
+        /* FONDO DEL LOGIN */
+        #login-container {
+            background: url('rolox.PNG') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .login-box h2 {
+            margin-bottom: 20px;
+        }
+
+        .login-box input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login-box button {
+            padding: 10px 20px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #login-error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        /* CONTENIDO */
+        #content {
+            display: none;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background: url('robloxik.PNG') no-repeat center center;
+            background-size: cover;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        nav {
+            background-color: #222;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ff0000;
+        }
+
+        main {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        section img {
+            max-width: 100%;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #d60000;
+            margin-bottom: 10px;
+        }
+
+        p, ul, ol {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- INICIO DE SESIÓN -->
+    <div id="login-container">
+        <div class="login-box">
+            <h2>Inicia sesión</h2>
+            <input type="email" id="email" placeholder="Correo electrónico">
+            <input type="password" id="password" placeholder="Contraseña">
+            <button onclick="login()">Entrar</button>
+            <p id="login-error"></p>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div id="content">
+        <header>
+            <h1>Explora el Mundo de Roblox</h1>
+        </header>
+
+        <nav>
+            <a href="#historia">Historia</a>
+            <a href="#tipos">Tipos de Juegos</a>
+            <a href="#robux">¿Qué son los Robux?</a>
+            <a href="#queridos">Más Queridos</a>
+            <a href="#ranking">Rankings</a>
+        </nav>
+
+        <main>
+            <section id="historia">
+                <h2>Historia de Roblox</h2>
+                <p>Roblox se creo en 2003 como una beta para un juego mas grande,mas adelante en 2006 fue lanzado oficialmente como una plataforma de creación de juegos y Desde entonces a crecido enormemente permitiendo a millones de jugadores y desarrolladores construir experiencias únicas.</p>
+                <img src="robloxen.PNG">
+            </section>
+
+                <section id="Mi avatar">
+                <h2>Aqui lo dejo a mi avatar</h2>
+                <ul>
+                <li>Komori</li>
+                </ul>
+                <img src="komorii.PNG">
+            </section>
+
+            <section id="tipos">
+                <h2>Tipos de Juegos en Roblox (por lo que veo son los mas queridos)</h2>
+                <ul>
+                    <li>Simuladores</li>
+                    <li>Obbys (juegos de obstáculos)</li>
+                    <li>Tycoons (juegos de negocios)</li>
+                    <li>Roleplay (aqui simulas ser que se yo,un policia)</li>
+                    <li>First Person Shooter (juegos de disparos)</li>
+                </ul>
+                <img src="rogax.PNG">
+            </section>
+
+            <section id="robux">
+                <h2>¿Qué son los Robux?</h2>
+                <p>Los Robux son la moneda virtual de Roblox que se usan para comprar accesorios,ropa,mejoras en juegos,pases,membresias y más,Puedes conseguirlos con dinero real o vendiendo objetos virtuales o haciendo tus propios juegos.</p>
+                <img src="images.PNG">
+            </section>
+
+            <section id="queridos">
+                <h2>Juegos Más Queridos (desde mi punto de vista)</h2>
+                <ol>
+                    <li>Adopt Me!</li>
+                    <li>Jail break</li>
+                    <li>Roba un brainrot</li>
+                    <li>Doors</li>
+                    <li>Natural disaster</li>
+                </ol>
+                <img src="algak.PNG">
+            </section>
+
+            <section id="ranking">
+                <h2>Rankings</h2>
+                <p>Consulta los juegos más populares según visitas, favoritos y jugadores activos en la página oficial:</p>
+                <p><a href="https://www.roblox.com/games" target="_blank">roblox.com/games</a></p>
+                <img src="SOLAk.PNG">
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function login() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const error = document.getElementById("login-error");
+
+            if (email && password) {
+                document.getElementById("login-container").style.display = "none";
+                document.getElementById("content").style.display = "block";
+            } else {
+                error.textContent = "Por favor, ingresa un correo y una contraseña.";
+            }
+        }
+    </script>
+</body>
+</html>
